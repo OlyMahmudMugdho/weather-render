@@ -1,0 +1,9 @@
+geocoding api (FOSS) : https://open-meteo.com/en/docs/geocoding-api
+weather api (FOSS)   : https://open-meteo.com/en/docs
+weather api daily value (AKA seasonal forecast api ) : https://open-meteo.com/en/docs/seasonal-forecast-api
+JS input event  (MDN)   : https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+
+
+
+
+content.innerHTML = content.innerHTML + `<a class="city-name" href="#" onclick=get_lat_long(` + data.results[0].latitude + `,` + data.results[0].longitude + `)` + ` >` + data.results[i].name + "," + data.results[i].country + "<br/>";
