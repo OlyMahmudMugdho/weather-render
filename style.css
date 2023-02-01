@@ -48,10 +48,7 @@ header > h1{
   border-radius: 0.5rem;
   font-size: 1.3rem;
 }
-.location:focus{
-  border: 3px solid #313030;
-  transition: 0.5s;
-}
+
 .fa-magnifying-glass{
   position: absolute;
   font-size: 1.5rem;
