@@ -30,14 +30,12 @@ const format_weather = async (x, y, city, country) => {
     let daily_data = await get_daily_weather(x, y);
     let maximum_temp_val = daily_data.daily.temperature_2m_max_member01[0];
     let minimum_temp_val = daily_data.daily.temperature_2m_min_member01[0]
-    console.log(weather);
     result.style.display = "none";
     content_container.style.display = "initial";
     city = city.replace(/%20/g, " ");
     country = country.replace(/%20/g, " ");
     city_name.innerHTML = city + ", " + country;
     current_weather.innerHTML = "Current Weather : " + weather.current_weather.temperature + "&deg;" + "C";
-    console.log(daily_data);
     max_temp.innerHTML = "Maximum Temperature : " + maximum_temp_val + "&deg;" + "C";
     min_temp.innerHTML = "Minimum Temperature : " + minimum_temp_val + "&deg;" + "C";
     return x, y;
@@ -46,8 +44,6 @@ const format_weather = async (x, y, city, country) => {
 const update = async (text) => {
     let city = text.target.value;
     city = city.replace(" ", "%20");
-    console.clear();
-    console.log(city);
     let data = await locate(city);
     result.style.display = "initial";
     result.innerHTML = "";
