@@ -6,28 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5aa44d0c56.js" crossorigin="anonymous"></script>
     <title>Weather</title>
-
 </head>
 
 <body>
+    <header>
+        <h1 class="heading">Weather App</h1>
+    </header>
     <div class="container">
         <div class="container-fluid">
             <div class="form-container">
                 <input type="text" name="location" id="location" class="location">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 
             <div class="result-section">
-                <div class="result">
-
-                </div>
+                <ul class="result">
+                </ul>
             </div>
             <div class="content-container">
                 <div class="content">
                     <h3 class="city"></h3>
-                    <p class="current-weather">
-
+                    <p class="current-weather weather-format">
                     </p>
+                    <p class="max-temp weather-format"></p>
+                    <p class="min-temp weather-format"></p>
+                    <p class="date-today weather-format"></p>
                 </div>
             </div>
         </div>

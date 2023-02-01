@@ -4,6 +4,8 @@ let content = document.querySelector(".content");
 let result = document.querySelector(".result");
 let city_name = document.querySelector(".city");
 let current_weather = document.querySelector(".current-weather");
+let max_temp = document.querySelector(".max-temp");
+let min_temp = document.querySelector(".min-temp");
 
 const locate = async (city) => {
     let obj = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + city);
@@ -17,8 +19,17 @@ const get_weather = async (latitude, longitude) => {
     return data;
 }
 
+const get_daily_weather = async (latitude, longitude) => {
+    let temp = await fetch(`https://seasonal-api.open-meteo.com/v1/seasonal?latitude=` + latitude + `&longitude=` + longitude + `&daily=temperature_2m_max,temperature_2m_min`);
+    let data = await temp.json();
+    return data;
+}
+
 const format_weather = async (x, y, city, country) => {
     let weather = await get_weather(x, y);
+    let daily_data = await get_daily_weather(x, y);
+    let maximum_temp_val = daily_data.daily.temperature_2m_max_member01[0];
+    let minimum_temp_val = daily_data.daily.temperature_2m_min_member01[0]
     console.log(weather);
     result.style.display = "none";
     content_container.style.display = "initial";
@@ -26,13 +37,15 @@ const format_weather = async (x, y, city, country) => {
     country = country.replace(/%20/g, " ");
     city_name.innerHTML = city + ", " + country;
     current_weather.innerHTML = "Current Weather : " + weather.current_weather.temperature + "&deg;" + "C";
+    console.log(daily_data);
+    max_temp.innerHTML = "Maximum Temperature : " + maximum_temp_val + "&deg;" + "C";
+    min_temp.innerHTML = "Minimum Temperature : " + minimum_temp_val + "&deg;" + "C";
     return x, y;
 }
 
 const update = async (text) => {
     let city = text.target.value;
     city = city.replace(" ", "%20");
-
     console.clear();
     console.log(city);
     let data = await locate(city);
