@@ -8,18 +8,24 @@
 
 body {
   max-height: 100vh;
-  /* background-color: #1ce6cb7a; */
-  background-color: #82AAE3;
+  /* background-color: #82AAE3; */
+  background-color: #abbeda;
   font-family: 'Open Sans', sans-serif;
 }
 header{
   display: flex;
-  justify-content: center;
+  align-items: center;
   font-size: 1.2rem;
+  flex-direction: column;
+}
+.logo{
+  margin-top: 4rem;
+  height: 5rem;
+  width: 5rem;
 }
 header > h1{
-  color: #313030;
-  margin-top: 4rem;
+  /* color: #313030; */
+  color: #494747;
   
 }
 .container {
