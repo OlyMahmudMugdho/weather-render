@@ -18,13 +18,12 @@ header{
   flex-direction: column;
 }
 .logo{
-  margin-top: 4rem;
+  margin-top: 2rem;
   height: 5rem;
   width: 5rem;
 }
 header > h1{
   color: #494747;
-  
 }
 .container {
   display: flex;
