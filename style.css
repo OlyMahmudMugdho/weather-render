@@ -97,6 +97,8 @@ header > h1{
   margin-top: 2rem;
   border-radius: 1rem;
   font-weight: 500;
+}
+.content:not(".city"){
   line-height: 0.2rem;
 }
 .city{
